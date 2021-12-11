@@ -29,7 +29,7 @@ github_username:  z80dev
 permalink: /:title:output_ext
 
 # Build settings
-theme: jekyll-theme-modernist
+theme: minima
 plugins:
   - jekyll-feed
 
