@@ -2,7 +2,7 @@
 layout: post
 title:  "Web3 Development With Clojurescript"
 date:   2021-12-10 18:09:26 -0500
-categories: jekyll update
+categories: clojurescript blockchain 
 ---
 Clojure has been my favorite language for a long time. It is not without its faults, but it is the language in which I can express my ideas in the most efficient way. It has a powerful macro system that lets you mold the language to your needs. Most Clojure code can run on the JVM as well as in a Javascript runtime (as Clojurescript). This lets us leverage two rich package ecosystems with a convenient lisp syntax.
 
@@ -24,11 +24,20 @@ Writing Clojure code is pretty simple and doesn't require much boilerplate. We w
 
 #### Clojure & shadow-cljs
 
-Install Clojure by following [this guide](https://clojure.org/guides/getting_started).
+First, install Clojure by following [this guide](https://clojure.org/guides/getting_started). We will need this before we can work with Clojurescript.
 
-shadow-cljs is the easiest (imo) way to compile your clojurescript to execute in the browser. It makes it dead-simple to integrate npm dependencies into your Clojurescript code.
+[shadow-cljs](https://github.com/thheller/shadow-cljs) is the easiest (imo) way to compile your clojurescript to execute in the browser. It makes it dead-simple to integrate npm dependencies into your Clojurescript code. We will use `npx` so we don't need to install it directly, but we will need some dependencies installed in order to use shadow-cljs, namely:
 
-Follow the steps to install [shadow-cljs](https://github.com/thheller/shadow-cljs) as well as the steps laid out under their [Quick Start](https://github.com/thheller/shadow-cljs#quick-start) guide to get us on the same page. This will walk you through the basics of getting a Clojurescript project running. We will modify this code in order to add Web3 capabilities. I used the name `helloweb3` instead of `acme`. This makes no difference other than the name used for some files and namespaces. 
+- [node.js](https://nodejs.org) (v6.0.0+, most recent version preferred)
+- [npm](https://www.npmjs.com) (comes bundled with `node.js`) or [yarn](https://www.yarnpkg.com)
+- [Java SDK](https://adoptopenjdk.net/) (Version 8+, Hotspot)
+
+Once these are installed, we can initialize our project. I like to create my projects under `~/Developer`, but feel free to use whichever directory makes sense to you.
+
+{% highlight bash %}
+cd ~/Developer
+npx create-cljs-project hello-web3
+{% endhighlight %}
 
 #### Reagent
 
@@ -107,3 +116,8 @@ npx shadow-cljs watch frontend
 and then navigate to [http://localhost:8080](http://localhost:8080) where you should see the following:
 
 ![hello web3](/assets/site1.png)
+
+## Talking to the Blockchain
+
+Now that we can display something, lets try saying hello to the users' address rather than just saying "Hello Web3". We will do this by asking the user to connect his Metamask wallet. Once they do so, we will be able to ask the wallet for the users' currently selected address, and greet them this way instead.
+
