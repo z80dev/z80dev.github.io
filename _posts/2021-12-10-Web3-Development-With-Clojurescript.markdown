@@ -10,7 +10,7 @@ While much of the code will be self-explanatory, a familiarity with Clojure (or 
 
 ## What We Will Cover
 
-This series will walk you through all the steps of creating a Web3 dApp. We'll dive into frontend in Clojurescript and write some smart-contracts in Solidity. This is mainly targetting EVM languages, but its possible I'll expand the series to cover integrating Solana support to our site.
+This series will walk you through all the steps of creating a Web3 dApp. We'll dive into frontend in Clojurescript and write some smart-contracts in Solidity. This is mainly targetting EVM blockchains, but its possible I'll expand the series to cover integrating Solana support to our site.
 
 In this first post, we'll go over setting up your project's dependencies in order to call Javascript Web3 libraries from Clojurescript. We'll create convenient wrappers around some important functions which will let us write idiomatic Clojurescript which interacts with the blockchain.
 
