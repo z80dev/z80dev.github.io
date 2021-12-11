@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Web3 Development With Clojurescript"
+title:  "Web3 Development With Clojurescript Pt. 0"
 date:   2021-12-10 18:09:26 -0500
 categories: clojurescript blockchain 
 ---
@@ -37,6 +37,20 @@ Once these are installed, we can initialize our project. I like to create my pro
 {% highlight bash %}
 cd ~/Developer
 npx create-cljs-project hello-web3
+{% endhighlight %}
+
+The generated project will have the following structure:
+
+
+{% highlight bash %}
+.
+├── node_modules (omitted ...)
+├── package.json
+├── package-lock.json
+├── shadow-cljs.edn
+└── src
+    ├── main
+    └── test
 {% endhighlight %}
 
 #### Reagent
